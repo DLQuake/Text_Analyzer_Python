@@ -15,7 +15,7 @@ Projekt Text Analyzer umożliwia analizę tekstu z różnych źródeł, takich j
    ```bash
    cd Text-Analyzer
    py -3 -m venv venv
-   source venv/Scripts/activate  # Dla systemu Unix/Mac # Dla systemu Windows
+   source venv/Scripts/activate
    ```
 
 3. Zainstaluj wymagane biblioteki:
