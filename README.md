@@ -7,7 +7,7 @@ Projekt Text Analyzer umożliwia analizę tekstu z różnych źródeł, takich j
 1. Sklonuj repozytorium:
 
    ```bash
-   git clone https://github.com/TWOJA_NAZWA_UZYTKOWNIKA/Text-Analyzer.git
+   git clone https://github.com/DLQuake/Text_Analyzer_Python.git
    ```
 
 2. Utwórz i aktywuj wirtualne środowisko (venv):
