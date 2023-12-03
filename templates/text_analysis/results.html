@@ -1,0 +1,29 @@
+<!-- templates/text_analysis/results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyniki Analizy Tekstu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Wyniki Analizy Tekstu</h2>
+            <p class="subtitle">Raport dla linku: <a href="{{ url_to_analyze }}" target="_blank">{{ url_to_analyze }}</a></p>
+            <p class="subtitle">Najczęściej występujące słowa:</p>
+            <ul>
+                {% for word, freq in top_words %}
+                    <li>{{ word }}: {{ freq }} razy</li>
+                {% endfor %}
+            </ul>
+            <div class="field is-grouped">
+                <div class="control">
+                    <a href="{% url 'download_report' url=encoded_url %}" download class="button is-primary">Pobierz raport</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
