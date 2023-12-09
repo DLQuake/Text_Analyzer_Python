@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport PDF</title>
+</head>
+<body>
+    <h2>Wyniki Analizy Tekstu</h2>
+    <p>Raport dla linku: {{ url_to_analyze }}</p>
+    <p>Najczęściej występujące słowa:</p>
+    <ul>
+        {% for word, freq in top_words %}
+            <li>{{ word }}: {{ freq }} razy</li>
+        {% endfor %}
+    </ul>
+    <p>Analiza sentymentu:</p>
+    <p>Sentyment tekstu: {{ sentiment }}</p>
+    <p>Słowa kluczowe: {{ keywords }}</p>
+</body>
+</html>
