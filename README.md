@@ -1,6 +1,6 @@
 # Text Analyzer
 
-Projekt Text Analyzer w wersji Django umożliwia analizę tekstu z różnych źródeł, takich jak artykuły z Internetu. Aplikacja zbiera tekst, przeprowadza analizę częstości słów i generuje raport zawierający najczęściej występujące słowa.
+Projekt Text Analyzer w wersji Django umożliwia analizę tekstu z różnych źródeł, takich jak artykuły z Internetu. Aplikacja zbiera tekst, przeprowadza analizę częstości słów, analizę sentymentu, wyodrębnianie słów kluczowych i generuje raport zawierający najczęściej występujące słowa, analizę sentymentu i słowa kluczowe.
 
 ## Instalacja
 
@@ -54,4 +54,11 @@ Projekt Text Analyzer w wersji Django umożliwia analizę tekstu z różnych źr
 
 2. Kliknij przycisk "Analizuj".
 
-3. Znajdź wyniki na stronie z wynikami oraz oraz jest możliwość pobrania raportu w formie pliku tekstowego.
+3. Znajdź wyniki na stronie z wynikami oraz oraz jest możliwość pobrania raportu w formie pliku PDF.
+
+## Funkcjonalności
+
+- Analiza częstości słów.
+- Analiza sentymentu tekstu.
+- Wyodrębnianie słów kluczowych.
+- Generowanie raportu w formie pliku PDF.
