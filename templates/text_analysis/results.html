@@ -11,20 +11,38 @@
         <div class="container">
             <h2 class="title is-3">Wyniki Analizy Tekstu</h2>
             <p class="subtitle is-5">Raport dla linku: <a href="{{ url_to_analyze }}" target="_blank">{{ url_to_analyze }}</a></p>
-            <p class="subtitle is-5">Najczęściej występujące słowa:</p>
-            <ul>
-                {% for word, freq in top_words %}
-                    <li>{{ word }}: {{ freq }} razy</li>
-                {% endfor %}
-            </ul>
-            <br>
-            <p class="subtitle is-5">Analiza sentymentu: {{ sentiment }}</p>
-            <p class="subtitle is-5">Słowa kluczowe: {{ keywords|join:", " }}</p>
-            <div class="field is-grouped">
-                <div class="control">
-                    <a href="{% url 'download_report' url=url_to_analyze %}" download class="button is-primary">Pobierz raport</a>
+
+            {% if keywords %}
+                <p class="subtitle is-5">Najczęściej występujące słowa:</p>
+                <ul>
+                    {% for word, freq in top_words %}
+                        <li>{{ word }}: {{ freq }} razy</li>
+                    {% endfor %}
+                </ul>
+                <br>
+                <p class="subtitle is-5">Analiza sentymentu: {{ sentiment }}</p>
+
+                <p class="subtitle is-5">Słowa kluczowe: {{ keywords|join:", " }}</p>
+
+                <p class="subtitle is-5">Status informacji: {{ fake_news_status }}</p>
+
+                <p class="subtitle is-5">Podsumowanie:</p>
+                <p>{{ summary }}</p>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <a href="{% url 'download_report' url=url_to_analyze %}" download class="button is-primary">Pobierz raport</a>
+                    </div>
                 </div>
-            </div>
+            {% else %}
+                <p class="has-text-danger">Nie udało się przeprowadzić analizy tekstu dla podanego linku.</p>
+                <ul class="has-text-danger">
+                    <li>Strona nie zawiera tekstu do analizy.</li>
+                    <li>Analiza tekstu dla tej strony jest obecnie niemożliwa.</li>
+                    <li>Strona jest zabezpieczona przed scrapowaniem.</li>
+                    <li>Brak dostępu do treści strony (np. strona wymaga uwierzytelnienia).</li>
+                </ul>
+            {% endif %}
         </div>
     </section>
 </body>
