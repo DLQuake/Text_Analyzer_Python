@@ -9,6 +9,7 @@
 <body>
     <h2>Wyniki Analizy Tekstu</h2>
     <p>Raport dla linku: {{ url_to_analyze }}</p>
+
     <p>Najczęściej występujące słowa:</p>
     <ul>
         {% for word, freq in top_words %}
@@ -18,5 +19,8 @@
     <p>Analiza sentymentu:</p>
     <p>Sentyment tekstu: {{ sentiment }}</p>
     <p>Słowa kluczowe: {{ keywords }}</p>
+    <p>Status informacji: {{ fake_news_status }}</p>
+    <p>Podsumowanie:</p>
+    <p>{{ summary }}</p>
 </body>
 </html>
