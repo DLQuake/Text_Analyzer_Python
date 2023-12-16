@@ -9,16 +9,39 @@
 <body>
     <section class="section">
         <div class="container">
-            <h2 class="title">Analiza Tekstu</h2>
+        <h2 class="title has-text-centered">Analiza Tekstu</h2>
+
             <form method="post" action="{% url 'home' %}" class="box">
                 {% csrf_token %}
-                {{ form.as_p }}
+
+                <div class="field">
+                    <label class="label">Wprowadź link do artykułu:</label>
+                    <div class="control">
+                        {{ form.url_to_analyze.label_tag }}
+                        {{ form.url_to_analyze }}
+                    </div>
+                </div>
+
                 <div class="field is-grouped">
                     <div class="control">
                         <button type="submit" class="button is-primary">Analizuj</button>
                     </div>
                 </div>
             </form>
+
+            <div class="content">
+                <h3 class="subtitle">O Programie</h3>
+                <p>
+                    Witaj w programie Analiza Tekstu! Ten program pozwala na analizę treści z podanego linku do artykułu.
+                    Po analizie otrzymasz informacje o najczęściej występujących słowach, sentymencie tekstu oraz słowach kluczowych.
+                    Wprowadź link artykułu, kliknij przycisk "Analizuj", a program dostarczy interesujące informacje na temat treści.
+                </p>
+            </div>
+
+            <div class="content">
+                <h3 class="subtitle">Link do repozytorium na GitHub</h3>
+                <a href="https://github.com/DLQuake/text_Analyzer_Python" target="_blank">https://github.com/DLQuake/text_Analyzer_Python</a>
+            </div>
         </div>
     </section>
 </body>
